@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C33F8601CF7784E003A7F43 /* defenseDiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C33F85F1CF7784E003A7F43 /* defenseDiceCollectionViewCell.swift */; };
 		8CE11DFD1CF62084003DA5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE11DFC1CF62084003DA5C9 /* AppDelegate.swift */; };
 		8CE11DFF1CF62084003DA5C9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE11DFE1CF62084003DA5C9 /* FirstViewController.swift */; };
 		8CE11E011CF62084003DA5C9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE11E001CF62084003DA5C9 /* SecondViewController.swift */; };
 		8CE11E041CF62084003DA5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CE11E021CF62084003DA5C9 /* Main.storyboard */; };
 		8CE11E061CF62085003DA5C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CE11E051CF62085003DA5C9 /* Assets.xcassets */; };
 		8CE11E091CF62085003DA5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CE11E071CF62085003DA5C9 /* LaunchScreen.storyboard */; };
+		8CE11E131CF6427E003DA5C9 /* AttackDefenseDie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE11E121CF6427E003DA5C9 /* AttackDefenseDie.swift */; };
+		8CE11E151CF65C84003DA5C9 /* attackDiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE11E141CF65C84003DA5C9 /* attackDiceCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C33F85F1CF7784E003A7F43 /* defenseDiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = defenseDiceCollectionViewCell.swift; path = ScapeRoller/defenseDiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CE11DF91CF62084003DA5C9 /* ScapeRoller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScapeRoller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE11DFC1CF62084003DA5C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CE11DFE1CF62084003DA5C9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		8CE11E051CF62085003DA5C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CE11E081CF62085003DA5C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CE11E0A1CF62085003DA5C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CE11E121CF6427E003DA5C9 /* AttackDefenseDie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackDefenseDie.swift; sourceTree = "<group>"; };
+		8CE11E141CF65C84003DA5C9 /* attackDiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = attackDiceCollectionViewCell.swift; path = ScapeRoller/attackDiceCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,8 @@
 		8CE11DF01CF62084003DA5C9 = {
 			isa = PBXGroup;
 			children = (
+				8C33F85F1CF7784E003A7F43 /* defenseDiceCollectionViewCell.swift */,
+				8CE11E141CF65C84003DA5C9 /* attackDiceCollectionViewCell.swift */,
 				8CE11DFB1CF62084003DA5C9 /* ScapeRoller */,
 				8CE11DFA1CF62084003DA5C9 /* Products */,
 			);
@@ -57,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				8CE11DFC1CF62084003DA5C9 /* AppDelegate.swift */,
+				8CE11E121CF6427E003DA5C9 /* AttackDefenseDie.swift */,
 				8CE11DFE1CF62084003DA5C9 /* FirstViewController.swift */,
 				8CE11E001CF62084003DA5C9 /* SecondViewController.swift */,
 				8CE11E021CF62084003DA5C9 /* Main.storyboard */,
@@ -140,8 +149,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CE11E011CF62084003DA5C9 /* SecondViewController.swift in Sources */,
+				8CE11E131CF6427E003DA5C9 /* AttackDefenseDie.swift in Sources */,
 				8CE11DFD1CF62084003DA5C9 /* AppDelegate.swift in Sources */,
 				8CE11DFF1CF62084003DA5C9 /* FirstViewController.swift in Sources */,
+				8C33F8601CF7784E003A7F43 /* defenseDiceCollectionViewCell.swift in Sources */,
+				8CE11E151CF65C84003DA5C9 /* attackDiceCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +305,7 @@
 				8CE11E0F1CF62085003DA5C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
