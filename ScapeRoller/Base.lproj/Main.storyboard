@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Attack / Defense-->
@@ -19,7 +20,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1m5-d2-Qxb">
                                 <rect key="frame" x="104" y="310" width="30" height="30"/>
-                                <state key="normal" title="Add"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="35" y="369" width="30" height="30"/>
                                 </variation>
@@ -29,7 +32,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4D-i5-T8f">
                                 <rect key="frame" x="89" y="341" width="60" height="30"/>
-                                <state key="normal" title="Subtract"/>
+                                <state key="normal" title="Subtract">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="400" width="60" height="30"/>
                                 </variation>
@@ -45,7 +50,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="127" y="245" width="253" height="30"/>
+                                    <rect key="frame" x="127" y="245" width="253" height="40"/>
                                 </variation>
                                 <connections>
                                     <action selector="attackRollButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="suv-IW-2IU"/>
@@ -59,7 +64,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="127" y="503" width="253" height="30"/>
+                                    <rect key="frame" x="127" y="503" width="253" height="40"/>
                                 </variation>
                                 <connections>
                                     <action selector="defenseRollButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="17q-ZE-3Nj"/>
@@ -67,7 +72,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeF-93-iPG">
                                 <rect key="frame" x="104" y="116" width="30" height="30"/>
-                                <state key="normal" title="Add"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="35" y="116" width="30" height="30"/>
                                 </variation>
@@ -77,7 +84,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNu-si-7qQ">
                                 <rect key="frame" x="89" y="147" width="60" height="30"/>
-                                <state key="normal" title="Subtract"/>
+                                <state key="normal" title="Subtract">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="147" width="60" height="30"/>
                                 </variation>
@@ -133,7 +142,7 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="j0Z-hr-gZg"/>
                                 </connections>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PQT-Jz-zg4">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PQT-Jz-zg4">
                                 <rect key="frame" x="196" y="62" width="360" height="170"/>
                                 <color key="backgroundColor" white="0.93377726510000003" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ahl-SM-zcX">
@@ -219,9 +228,49 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HV-CU-Cm0">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="3HV-CU-Cm0" secondAttribute="trailing" id="0ox-DB-Azk"/>
+                            <constraint firstItem="3HV-CU-Cm0" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="40m-54-ONl"/>
+                            <constraint firstItem="3HV-CU-Cm0" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="Mx3-kW-xkQ"/>
+                            <constraint firstItem="3HV-CU-Cm0" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="iQd-S0-CLJ"/>
+                            <constraint firstItem="3HV-CU-Cm0" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="myj-OV-RoC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3HV-CU-Cm0"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0ox-DB-Azk"/>
+                                <exclude reference="40m-54-ONl"/>
+                                <exclude reference="Mx3-kW-xkQ"/>
+                                <exclude reference="iQd-S0-CLJ"/>
+                                <exclude reference="myj-OV-RoC"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="3HV-CU-Cm0"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0ox-DB-Azk"/>
+                                <include reference="40m-54-ONl"/>
+                                <include reference="Mx3-kW-xkQ"/>
+                                <include reference="iQd-S0-CLJ"/>
+                                <include reference="myj-OV-RoC"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="20-Sided Die" image="20SidedDieTabIcon" selectedImage="20SidedDieTabIcon" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="animationView" destination="3HV-CU-Cm0" id="2FQ-nk-WH2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

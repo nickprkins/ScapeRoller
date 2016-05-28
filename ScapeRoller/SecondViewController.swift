@@ -7,19 +7,139 @@
 //
 
 import UIKit
+import CoreText
 
-class SecondViewController: UIViewController {
-
+class SecondViewController: UIViewController, UICollisionBehaviorDelegate {
+    
+    @IBOutlet var animationView: UIView!
+    
+    var squareView:UIView!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.view.addBackground()
+        
+        //draw20SidedDie()
+        drawSquare()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // When the user shakes their device it will roll Attack and Defense Dice
+    override func canBecomeFirstResponder() -> Bool {
+        return true
     }
-
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            
+            //AnimateDice()
+            animateSquare()
+            
+        }
+    }
+    
+    func draw20SidedDie(){
+        
+        let die = CAShapeLayer()
+        view.layer.addSublayer(die)
+        die.opacity = 1.0
+        die.lineJoin = kCALineJoinMiter
+        //shape.strokeColor = UIColor.whiteColor().CGColor
+        die.fillColor = UIColor.blackColor().CGColor
+        
+        let path = UIBezierPath()
+        path.moveToPoint(CGPointMake(206, 240))
+        path.addLineToPoint(CGPointMake(305, 299))
+        path.addLineToPoint(CGPointMake(306, 417))
+        path.addLineToPoint(CGPointMake(205, 476))
+        path.addLineToPoint(CGPointMake(102, 417))
+        path.addLineToPoint(CGPointMake(104, 299))
+        path.closePath()
+        die.path = path.CGPath
+        
+    }
+    
+//    lazy var animator: UIDynamicAnimator = {
+//        return UIDynamicAnimator(referenceView: self.view)
+//    }()
+//    
+//    lazy var gravity:UIGravityBehavior = {
+//        let lazyGravity = UIGravityBehavior()
+//        return lazyGravity
+//    }()
+    
+    func AnimateDice() {
+        
+        animator.addBehavior(gravity)
+        let theDie = UIImageView(draw20SidedDie())
+        theDie.frame.size.height = 50.0
+        theDie.frame.size.width = 50.0
+        theDie.frame.origin.x = 206
+        theDie.frame.origin.y = 240
+        theDie.userInteractionEnabled = true
+        gravity.addItem(theDie)
+        
+        
+    }
+    
+    func drawSquare(){
+        let squareSize = CGSize(width: 30.0, height: 30.0)
+        let centerPoint = CGPoint(x: self.animationView.bounds.midX - (squareSize.width/2), y: self.animationView.bounds.midY - (squareSize.height/2))
+        let frame = CGRect(origin: centerPoint, size: squareSize)
+        squareView = UIView(frame: frame)
+        squareView.backgroundColor = UIColor.orangeColor()
+        squareView.tag = 2
+        animationView.addSubview(squareView)
+    }
+    
+    lazy var animator: UIDynamicAnimator = {
+        return UIDynamicAnimator(referenceView: self.animationView)
+    }()
+    
+    lazy var gravity:UIGravityBehavior = {
+        let lazyGravity = UIGravityBehavior()
+        return lazyGravity
+    }()
+    
+    lazy var collider:UICollisionBehavior = {
+        let lazyCollider = UICollisionBehavior()
+        // This line, makes the boundries of our reference view a boundary
+        // for the added items to collide with.
+        lazyCollider.translatesReferenceBoundsIntoBoundary = true
+        return lazyCollider
+    }()
+    
+    lazy var resistance:UIDynamicItemBehavior = {
+        
+        let lazyBehavior = UIDynamicItemBehavior()
+        lazyBehavior.elasticity = 0.5
+        
+        return lazyBehavior
+    }()
+    
+    func animateSquare(){
+        
+        let instantaneousPush: UIPushBehavior = UIPushBehavior(items: [squareView], mode: UIPushBehaviorMode.Instantaneous)
+        
+        instantaneousPush.setAngle( CGFloat(M_PI_2) , magnitude: 0.7);
+        
+        
+        // 1. Add behaviors to the animator
+        animator.addBehavior(gravity)
+        animator.addBehavior(collider)
+        animator.addBehavior(resistance)
+        animator.addBehavior(instantaneousPush)
+        
+        
+        // 2. Add items to the behavior
+        gravity.addItem(squareView)
+        collider.addItem(squareView)
+        resistance.addItem(squareView)
+        instantaneousPush.addItem(squareView)
+        
+        
+    }
 
 }
-

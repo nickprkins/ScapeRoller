@@ -141,7 +141,7 @@ extension UIView {
         let height = UIScreen.mainScreen().bounds.size.height
         
         let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, width, height))
-        imageViewBackground.image = UIImage(named: "scapeBackground")
+        imageViewBackground.image = UIImage(named: "scapeBackgroundBlue")
         
         // you can change the content mode:
         imageViewBackground.contentMode = UIViewContentMode.ScaleAspectFill
