@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Attack / Defense-->
@@ -230,47 +228,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HV-CU-Cm0">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2K-pe-l5U" userLabel="Dice View">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </sceneKitView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="3HV-CU-Cm0" secondAttribute="trailing" id="0ox-DB-Azk"/>
-                            <constraint firstItem="3HV-CU-Cm0" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="40m-54-ONl"/>
-                            <constraint firstItem="3HV-CU-Cm0" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="Mx3-kW-xkQ"/>
-                            <constraint firstItem="3HV-CU-Cm0" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="iQd-S0-CLJ"/>
-                            <constraint firstItem="3HV-CU-Cm0" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="myj-OV-RoC"/>
+                            <constraint firstItem="M2K-pe-l5U" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="7c3-m7-Yz0"/>
+                            <constraint firstItem="M2K-pe-l5U" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="8YP-3M-Gzp"/>
+                            <constraint firstAttribute="trailing" secondItem="M2K-pe-l5U" secondAttribute="trailing" id="gWb-pX-NFo"/>
+                            <constraint firstItem="M2K-pe-l5U" firstAttribute="bottom" secondItem="Djb-ko-YwX" secondAttribute="top" id="jO9-qO-xwz"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="3HV-CU-Cm0"/>
+                                <exclude reference="M2K-pe-l5U"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0ox-DB-Azk"/>
-                                <exclude reference="40m-54-ONl"/>
-                                <exclude reference="Mx3-kW-xkQ"/>
-                                <exclude reference="iQd-S0-CLJ"/>
-                                <exclude reference="myj-OV-RoC"/>
+                                <exclude reference="7c3-m7-Yz0"/>
+                                <exclude reference="8YP-3M-Gzp"/>
+                                <exclude reference="gWb-pX-NFo"/>
+                                <exclude reference="jO9-qO-xwz"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="3HV-CU-Cm0"/>
+                                <include reference="M2K-pe-l5U"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0ox-DB-Azk"/>
-                                <include reference="40m-54-ONl"/>
-                                <include reference="Mx3-kW-xkQ"/>
-                                <include reference="iQd-S0-CLJ"/>
-                                <include reference="myj-OV-RoC"/>
+                                <include reference="7c3-m7-Yz0"/>
+                                <include reference="8YP-3M-Gzp"/>
+                                <include reference="gWb-pX-NFo"/>
+                                <include reference="jO9-qO-xwz"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="20-Sided Die" image="20SidedDieTabIcon" selectedImage="20SidedDieTabIcon" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="animationView" destination="3HV-CU-Cm0" id="2FQ-nk-WH2"/>
+                        <outlet property="diceView" destination="M2K-pe-l5U" id="aM8-uw-kA3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
